@@ -39,3 +39,19 @@ body {
     cursor: pointer;
     
 }
+.maincontainer{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+ 
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f9fa; 
+
+}
+.bigtext{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 25%;
+    font-size: 4rem;
+    font-weight: bold;
+}
