@@ -1,0 +1,41 @@
+
+
+/* Font used for big text =   Akzidenz-Grotesk  */
+body {
+    background-color: #f8f9fa; /* Light gray background for subtle contrast */
+    color: #212529; /* Dark gray text for readability */
+    font-family: sans-serif, Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif; /* Clean and widely supported font */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: white;
+}
+.logoimg{
+    color: white !important;
+    width: 50px;
+    height: 50px;
+}
+.container-fluid{
+    color: white !important;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.nabarbtns > ul{
+    
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nabarbtns > ul > li{
+    display: flex;
+    margin: 2px 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
