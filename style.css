@@ -78,3 +78,46 @@ body {
     
     font-weight: bold;
 }
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .stat-card p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  

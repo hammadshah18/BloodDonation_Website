@@ -10,6 +10,122 @@
     <script src="https://unpkg.com/lottie-web@5.7.13/build/player/lottie.min.js"></script>
     <style>
     
+       /* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+.form-container {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-container input {
+  margin-right: 0.5rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c0392b;
+}
+
     </style>
   </head>
   <body>
@@ -32,6 +148,41 @@
             </div>
         </div>
       </nav>
+
+
+  <main>
+    <h2 class="title">Donor Registration</h2>
+    <form class="form-container">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <input type="text" placeholder="Full Name *" required />
+        <div class="form-row">
+          <input type="date" placeholder="Date of Birth *" required />
+          <input type="text" placeholder="Gender *" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact Information</legend>
+        <input type="email" placeholder="Email Address *" required />
+        <input type="tel" placeholder="Phone Number *" required />
+        <input type="text" placeholder="Address" />
+        <div class="form-row">
+          <input type="text" placeholder="City" />
+          <input type="text" placeholder="Zip Code" />
+        </div>
+      </fieldset>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="agree" required />
+        <label for="agree">I agree to the terms and conditions</label>
+      </div>
+
+      <button type="submit" onclick="" class="submit-btn">REGISTER AS DONOR</button>
+    </form>
+  </main>
+    
+ 
 
   </body>
 </html>
