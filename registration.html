@@ -157,8 +157,21 @@ input[type="date"] {
         <legend>Personal Information</legend>
         <input type="text" placeholder="Full Name *" required />
         <div class="form-row">
-          <input type="date" placeholder="Date of Birth *" required />
+          <input type="text" placeholder="Age *" required />
           <input type="text" placeholder="Gender *" required />
+          <input list="blood-types" type="text" placeholder="Select Blood Type" name="bloodType" required />
+
+          <datalist id="blood-types">
+            <option value="A+">
+            <option value="A-">
+            <option value="B+">
+            <option value="B-">
+            <option value="AB+">
+            <option value="AB-">
+            <option value="O+">
+            <option value="O-">
+          </datalist>
+          
         </div>
       </fieldset>
 
@@ -166,11 +179,8 @@ input[type="date"] {
         <legend>Contact Information</legend>
         <input type="email" placeholder="Email Address *" required />
         <input type="tel" placeholder="Phone Number *" required />
-        <input type="text" placeholder="Address" />
-        <div class="form-row">
-          <input type="text" placeholder="City" />
-          <input type="text" placeholder="Zip Code" />
-        </div>
+        <input type="text" placeholder="Donor Address *" required />
+       
       </fieldset>
 
       <div class="checkbox-container">
