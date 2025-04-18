@@ -4,11 +4,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev",
+    "dev": "node app.js",
     "build": "next build",
-    "start": "next start"
+    "start": "node app.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aitzaz-Hakro/BloodDonation_Website.git"
@@ -25,7 +24,9 @@
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
-  
 }

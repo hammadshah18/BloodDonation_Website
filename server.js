@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 
 // Connect to local MySQL
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'your_db_name'
+  host: 'http://b8qdfxar6hvmbqwwykpc-mysql.services.clever-cloud.com',
+  user: 'udgsco5v0isczcc5',
+  password: 'tWY965BCMv8Hdhx2a9vP',
+  database: 'b8qdfxar6hvmbqwwykpc'
 });
 
 db.connect(err => {
@@ -30,4 +30,4 @@ app.post('/submit', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(3000, () => console.log('Server running on port 3306'));
