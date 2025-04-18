@@ -8,6 +8,7 @@ const db = mysql.createConnection({
   port: process.env.MYSQL_PORT
 });
 
+
 export default function handler(req, res) {
   if (req.method === 'POST') {
     let body = '';
