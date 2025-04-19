@@ -17,6 +17,30 @@
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
 }
+body {
+  background: url('media/pexels-pranidchakan-boonrom-101111-1350560.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+main, nav {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
 
 body {
   background-color: #f8f9fa;
