@@ -12,16 +12,7 @@
 
     <script src="https://unpkg.com/lottie-web@5.7.13/build/player/lottie.min.js"></script>
     <style>
-      .bigtext{
-        animation: FadeIn 0.5s ease-in;
-
-      }
-      @keyframes FadeIn {
-        0% { opacity: 0; transform: translateY(20px);}
-        100% { opacity: 1;transform: translateY(0px); }
-      }
-
-       
+    
     </style>
   </head>
   <body>
@@ -33,13 +24,17 @@
                 <img src="media/lifeblood-logo.png" class="logoimg" alt=""> Blood Bank Managment System</a>
             <div class="nabarbtns  text-light">
                 <ul style="padding-inline: 40px; margin-bottom: 10px;">
-                    <li ><a href="index.html" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Home</a></li>
+                    <li ><a href="" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Home</a></li>
                     <li ><a href="registration.html" style="text-decoration: none; color:black;font-weight: 500; font-size: 1.2rem;">Donate</a></li>
                     <li ><a href="patientregistration.html" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Patient</a></li>
                     <li ><a href="patientregistration.html" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Blood Requests</a></li>
           
                     <li>
-                        <button style="background-color: rgb(228, 19, 19); font-weight: 600;" type="button" class="signInButton btn btn-outline-danger" ><a href="signIn.html" style="text-decoration: none; color:white; font-weight: 500; font-size: 1.2rem;">Sign In</a></button>
+                        <div  style="width: 40px; height: 40px;  display: flex;
+                        align-items: end;
+                        justify-content: center; border: 4px solid rgb(228, 19, 19); border-radius: 50%; font-size: 1.7rem; overflow: hidden;">
+                          <i class="fa-solid fa-user" style="color: red;"></i>
+                        </div>
                     </li>
 
                 </ul>
@@ -57,7 +52,9 @@
        <div class="bigtext">
         <span> Donate Blood, <br> Save Lives </span>
        </div>
-      
+       <!-- <div class="subText">
+         <span> Save a life, donate blood </span>
+       </div> -->
        <div class="btnn">
            <button type="button" class="btn btn-danger btn-lg" style="background-color: rgb(228, 19, 19); color: white !important; font-weight: 600;" href >Get Started</button>
        </div>
@@ -129,12 +126,12 @@
             <div class="card text-center">
               <i class="fa-solid fa-stethoscope mt-3" style="font-size: 4.5rem; color: rgb(228, 19, 19);"></i>
             
-               <div class="card-body">
-               <h4 class="card-title">Free Checkup</h4>
-               <p class="card-text ">Get a free health checkup when you donate blood. Your health matters to us.</p>
-               </div>
-             </div>
-           </div>
+              <div class="card-body">
+                <h4 class="card-title">Free Checkup</h4>
+                <p class="card-text ">Get a free health checkup when you donate blood. Your health matters to us.</p>
+              </div>
+            </div>
+          </div>
 
           <!-- Third Card -->
           <div class="col-md-3">
@@ -167,9 +164,7 @@
   
     
   
-       <div class="loading">
 
-       </div>
 
   
       <script>

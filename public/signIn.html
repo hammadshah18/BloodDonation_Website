@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In / Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .toggle {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .error {
+      color: red;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .success {
+      color: green;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <h2 id="formTitle">Sign In</h2>
+    <div id="message"></div>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button onclick="handleAuth()">Submit</button>
+    <div class="toggle">
+      <span id="toggleText">Don't have an account?</span>
+      <a href="#" onclick="toggleForm()"> Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+    let isSignUp = false;
+
+    const users = [
+      { email: "test@example.com", password: "123456" },
+      { email: "aitzazhakro123@gmail.com", password: "hello123"}
+    ];
+
+    function toggleForm() {
+      isSignUp = !isSignUp;
+      document.getElementById("formTitle").textContent = isSignUp ? "Sign Up" : "Sign In";
+      document.getElementById("toggleText").textContent = isSignUp
+        ? "Already have an account?"
+        : "Don't have an account?";
+      document.getElementById("message").innerHTML = '';
+    }
+
+    function handleAuth() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      if (!email || !password) {
+        message.innerHTML = "<div class='error'>Please fill all fields.</div>";
+        return;
+      }
+
+      if (isSignUp) {
+        const userExists = users.some(user => user.email === email);
+        if (userExists) {
+          message.innerHTML = "<div class='error'>Email already registered.</div>";
+        } else {
+          users.push({ email, password });
+          message.innerHTML = "<div class='success'>Account created! You can now sign in.</div>";
+          toggleForm();
+        }
+      } else {
+        const validUser = users.find(user => user.email === email && user.password === password);
+        if (validUser) {
+          message.innerHTML = message.innerHTML = "<div class='success'>Login successful! Redirecting... 🎉</div>";
+  setTimeout(() => {
+  window.location.href = "indexAL.html";
+}, 1500);
+        } else {
+          message.innerHTML = "<div class='error'>Invalid email or password.</div>";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
