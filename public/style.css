@@ -120,13 +120,3 @@ body {
     font-weight: 500;
     margin: 0;
   }
-  .images{
-    display: flex;
-    flex-direction: column;
-  }
-  .images > image{
-    object-fit: cover;
-    background-color: #f8f9fa;
-    position: sticky;
-    top: 0;
-  } 
