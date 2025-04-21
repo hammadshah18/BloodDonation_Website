@@ -70,21 +70,23 @@
 
   <div class="container">
     <h2 id="formTitle">Sign In</h2>
+    <form action="" method="">
     <div id="message"></div>
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
+    <input type="email" name="email" id="email" placeholder="Email" required />
+    <input type="password" name="password" id="password" placeholder="Password" required />
     <button onclick="handleAuth()">Submit</button>
     <div class="toggle">
       <span id="toggleText">Don't have an account?</span>
       <a href="#" onclick="toggleForm()"> Sign Up</a>
     </div>
+  </form>
+    
   </div>
 
   <script>
     let isSignUp = false;
 
     const users = [
-      { email: "test@example.com", password: "123456" },
       { email: "aitzazhakro123@gmail.com", password: "hello123"}
     ];
 
@@ -121,7 +123,7 @@
         if (validUser) {
           message.innerHTML = message.innerHTML = "<div class='success'>Login successful! Redirecting... 🎉</div>";
   setTimeout(() => {
-  window.location.href = "indexAL.html";
+  window.location.href = "index.html"; 
 }, 1500);
         } else {
           message.innerHTML = "<div class='error'>Invalid email or password.</div>";

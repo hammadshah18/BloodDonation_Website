@@ -38,8 +38,15 @@
                     <li ><a href="patientregistration.html" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Patient</a></li>
                     <li ><a href="patientregistration.html" style="text-decoration: none; color:black; font-weight: 500; font-size: 1.2rem;">Blood Requests</a></li>
           
-                    <li>
+                    <li id="signIn">
                         <button style="background-color: rgb(228, 19, 19); font-weight: 600;" type="button" class="signInButton btn btn-outline-danger" ><a href="signIn.html" style="text-decoration: none; color:white; font-weight: 500; font-size: 1.2rem;">Sign In</a></button>
+                    </li>
+                    <li id="Profile" style="display: none;">
+                      <div  style="width: 40px; height: 40px;  display: flex;
+                      align-items: end;
+                      justify-content: center; border: 4px solid rgb(228, 19, 19); border-radius: 50%; font-size: 1.7rem; overflow: hidden;">
+                        <i class="fa-solid fa-user" style="color: red;"></i>
+                      </div>
                     </li>
 
                 </ul>
@@ -160,7 +167,9 @@
         <p class="mt-3 c" style="font-weight: 500; text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.5rem;">
             Location: Doctor Lane, Saddar, Hyderabad, Pahistan<br>
             Phone: <span style="border-right: 2px solid black;border-left: 2px solid black;">+92 304 3005127 </span><span> +92 304 3005127 </span><br>
-            Email: <a href="mailto:aitzazhakro123@gmail.com">aitzazhakro123@gmail.com</a> 
+            LinkedIn: <a href="https://www.linkedin.com/in/aitzazhassan/" style="text-decoration: none; color: black;" target="_blank"><img src="media/linkedin-in.svg" style=" width: 20PX;" alt="">Aitzaz Hassan</a> 
+             <a href="https://www.linkedin.com/in/aitzazhassan/" style="text-decoration: none; color: black;" target="_blank"><img src="media/linkedin-in.svg" style=" width: 20PX;" alt="">Hammad Shah</a> 
+            <br> Email: <a href="mailto:aitzazhakro123@gmail.com">aitzazhakro123@gmail.com</a> 
                    <a href="mailto:hammadshah18@gmail.com">hammadshah18@gmail.com</a>
           </p>
         </div>    
@@ -173,6 +182,17 @@
 
   
       <script>
+         const signInButton = document.getElementById('signIn');
+         const profileButton = document.getElementById('Profile');
+ 
+          signInButton.addEventListener('click', function() {
+            signInButton.style.display = 'none';
+            profileButton.style.display = 'block';
+          });
+              
+     
+
+
         lottie.loadAnimation({
           container: document.getElementById('lottie-animation'),
           renderer: 'svg',
