@@ -100,7 +100,7 @@ if ($conn->connect_error) {
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Blood Number</th>
+          <th>Number</th>
           <th>Blood Group</th>
         </tr>
         
@@ -113,7 +113,7 @@ if ($conn->connect_error) {
               <td>{$row['donor_id']}</td>
               <td>{$row['donor_name']}</td>
             
-              <td>{$row['donor_mail']}</td>
+              <td>{$row['donor_number']}</td>
               <td>{$row['donor_blood']}</td>
             </tr>";
           }
