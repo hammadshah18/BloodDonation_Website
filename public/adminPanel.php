@@ -21,6 +21,65 @@ if ($conn->connect_error) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <style>
+      * {
+      box-sizing: border-box;
+    }
+    .boddy{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .toggle {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .error {
+      color: red;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .success {
+      color: green;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+   </style>
 </head>
 <body>
 
@@ -54,8 +113,55 @@ if ($conn->connect_error) {
       </nav>
       <div class="navbar" style="margin-left: 60px; margin-right: 60px; border-top: 2px solid rgb(228, 19, 19);"></div>
 
+      
+      <div class="container">
+
+      <h2 id="formTitle">Sign In</h2>
+<form action="" method="post">
+  <div id="message"></div>
+  <input type="text" name="username" id="username" placeholder="Username" required />
+  <input type="password" name="password" id="password" placeholder="Password" required />
+  <button type="submit">Submit</button>
+  <div class="toggle">
+    <span id="toggleText">Only Admin have Access to Dashboard.</span>
+  </div>
+</form>
+
+<?php
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $username = $conn->real_escape_string($_POST['username']);
+  $password = $conn->real_escape_string($_POST['password']);
+
+  $query = "SELECT * FROM admin_info WHERE admin_username = '$username' AND admin_password = '$password'";
+  $result = $conn->query($query);
+
+
+  echo "<script>
+    document.getElementById('formTitle').style.display = 'block';
+    if ($result->num_rows > 0) {
+      document.getElementById('formTitle').style.display = 'none';
+      document.getElementById('Boddy').style.display = 'block';
+    } else {
+      document.getElementById('formTitle').style.display = 'block';
+      document.getElementById('Boddy').style.display = 'none';
+    }
+  </script>";
+}
+else {
+  echo "<div class='error'>Invalid username or password. Please try again.</div>";
+}
+?>
+
+    
+  </div>
 
 <!-- ADMIN PANEL -->
+ <div id="Boddy" style="display: none;" class="boddy">
+   
+  
 <div class="container my-5">
   <h2 class="text-center mb-4">Admin Dashboard</h2>
 
@@ -162,10 +268,15 @@ if ($conn->connect_error) {
   </div>
 </div>
 </div>
+
+
+</div>
 <!-- Scripts -->
 <script>
-  const signInButton = document.getElementById('signIn');
-  const profileButton = document.getElementById('Profile');
+  const signInButton = document.getElementById('FormTitle');
+  const profileButton = document.getElementById('Boddy');
+ 
+  // const profileButton = document.getElementById('Profile');
   signInButton.addEventListener('click', function () {
     signInButton.style.display = 'none';
     profileButton.style.display = 'block';
