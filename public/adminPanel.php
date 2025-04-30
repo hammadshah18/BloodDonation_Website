@@ -130,7 +130,6 @@ if ($conn->connect_error) {
 <?php
 
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $conn->real_escape_string($_POST['username']);
   $password = $conn->real_escape_string($_POST['password']);
